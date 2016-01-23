@@ -1,40 +1,35 @@
 <p id="notice"><%= notice %></p>
 
 <h1>AllTrails Calorie Counter</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Idnum</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @trails.each do |trail| %>
-      <tr>
-        <td><%= trail.name %></td>
-        <td><%= trail.idNum %></td>
-        <td><%= link_to 'Edit', edit_trail_path(trail) %></td>
-        <td><%= link_to 'Destroy', trail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="nav"></div>
+<div>
+  <label>Weight (lbs)</label>
+  <input type="range" name="pounds" id="weight" value="150" min="75" max="300" step="5.0">
+  <label id="weightLabel" class="displayInfo">150 pounds</label>
+</div>
+<div>
+  <label>Pace (MPH)</label>
+  <input type="range" name="pace" id="speed" value="1" min="0" max="12" step="0.5">
+  <label id="speedLabel" class="displayInfo">1 MPH</label>
+</div>
+<div>
+  <label>Age</label>
+  <input type="range" name="age" id="ageEntry" value="23" min="10" max="120" step="1">
+  <label id="ageLabel" class="displayInfo">23 years old</label>
+</div>
+<div>
+  <label>Trail Info</label>
+  <select id="trailPicker">
+    <% @trails.each do |eachtrail| %>
+      <%= content_tag(:option, eachtrail.name, value: eachtrail.idNum) %>
     <% end %>
-  </tbody>
-</table>
-
-<input type="range" name="pounds" id="points" value="150" min="75" max="300">
-<label id="weightLabel">150 pounds</label>
-<h2>0 calories</h2>
+  </select>
+  <label id="distanceLabel" class="displayInfo">0 Miles</label>
+  <label id="elevationLabel" class="displayInfo">0 feet gained</label>
+</div>
+<h2 id="calorieLabel">0 calories</h2>
 
 <br>
 
-<select>
-  <% @trails.each do |eachtrail| %>
-    <option>
-      <%= eachtrail.name %>
-    </option>
-  <% end %>
-</select>
 
 <%= link_to 'New Trail', new_trail_path %>

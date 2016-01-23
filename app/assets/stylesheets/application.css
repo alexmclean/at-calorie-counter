@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+.displayInfo {
+  font-size: 20px;
+  margin: 10px 10px;
+}
+
+input {
+
+}
+
+.nav {
+  height: 30px;
+  background-color: green;
+}
