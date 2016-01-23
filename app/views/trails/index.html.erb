@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Trails</h1>
+<h1>AllTrails Calorie Counter</h1>
 
 <table>
   <thead>
@@ -24,6 +24,16 @@
   </tbody>
 </table>
 
+<h2>0</h2>
+
 <br>
+
+<select>
+  <% @trails.each do |eachtrail| %>
+    <option>
+      <%= eachtrail.name %>
+    </option>
+  <% end %>
+</select>
 
 <%= link_to 'New Trail', new_trail_path %>

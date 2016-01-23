@@ -26,14 +26,6 @@
   </tbody>
 </table>
 
-<select>
-  <% @topics.each do |eachtopic| %>
-    <option>
-      <%= eachtopic.title %>
-    </option>
-  <% end %>
-</select>
-
 <br>
 
 <%= link_to 'New Topic', new_topic_path %>
