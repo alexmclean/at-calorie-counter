@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @trail.name %>
+</p>
+
+<p>
+  <strong>Idnum:</strong>
+  <%= @trail.idNum %>
+</p>
+
+<%= link_to 'Edit', edit_trail_path(@trail) %> |
+<%= link_to 'Back', trails_path %>
