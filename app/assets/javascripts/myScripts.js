@@ -11,10 +11,14 @@ $(document).ready(function() {
     $('#speedLabel').text(newSpeed + " MPH");
     updateCals();
   });
-
+  
   $('#ageEntry').on('change', function (e, val) {
     $('#ageLabel').text($(this).val() + " years old");
     updateCals();
+  });
+
+  $('#ageEntry').on('slide', function (e, val) {
+    console.log($(this).val());
   });
 
   $('#trailPicker').on('change', function (e) {
