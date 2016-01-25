@@ -1,35 +1,46 @@
 <p id="notice"><%= notice %></p>
+<div class="navContainer">
+  <h2 class="title">AllTrails Calorie Counter</h2>
+  <div class="nav"></div>
+</div>
+<div class="infoContainer">
+  <div class="aboutTitleContainer">
+    <label class="aboutYouLabel">About You</label>
+  
 
-<h1>AllTrails Calorie Counter</h1>
-<div class="nav"></div>
-<div>
-  <label>Weight (lbs)</label>
-  <input type="range" name="pounds" id="weight" value="150" min="75" max="300" step="5.0">
-  <label id="weightLabel" class="displayInfo">150 pounds</label>
+    <table class="inputTable">
+      <tr>
+        <td><label>Weight (lbs)</label></td>
+        <td><input type="range" name="pounds" id="weight" value="150" min="75" max="300" step="5.0"></td>
+        <td><label id="weightLabel" class="displayInfo">150 pounds</label></td>
+      </tr>
+      <tr>
+        <td><label>Pace (MPH)</label></td>
+        <td><input type="range" name="pace" id="speed" value="1" min="0" max="12" step="0.5"></td>
+        <td><label id="speedLabel" class="displayInfo">1 MPH</label></td>
+      </tr>
+      <tr>
+        <td><label>Age</label></td>
+        <td><input type="range" name="age" id="ageEntry" value="23" min="10" max="120" step="1"></td>
+        <td><label id="ageLabel" class="displayInfo">23 years old</label></td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+  <label class="aboutYouLabel">Select Your Trail</label>
+  <div class="trailContainer">
+    <select id="trailPicker">
+      <% @trails.each do |eachtrail| %>
+        <%= content_tag(:option, eachtrail.name, value: eachtrail.idNum) %>
+      <% end %>
+    </select>
+    <label id="distanceLabel" class="displayInfo">0 Miles</label>
+    <label id="elevationLabel" class="displayInfo">0 feet gained</label>
+  </div>
+  <hr>
+  <h2 id="calorieLabel">0 calories burned!</h2>
+  <%= link_to 'New Trail', new_trail_path %>
 </div>
-<div>
-  <label>Pace (MPH)</label>
-  <input type="range" name="pace" id="speed" value="1" min="0" max="12" step="0.5">
-  <label id="speedLabel" class="displayInfo">1 MPH</label>
-</div>
-<div>
-  <label>Age</label>
-  <input type="range" name="age" id="ageEntry" value="23" min="10" max="120" step="1">
-  <label id="ageLabel" class="displayInfo">23 years old</label>
-</div>
-<div>
-  <label>Trail Info</label>
-  <select id="trailPicker">
-    <% @trails.each do |eachtrail| %>
-      <%= content_tag(:option, eachtrail.name, value: eachtrail.idNum) %>
-    <% end %>
-  </select>
-  <label id="distanceLabel" class="displayInfo">0 Miles</label>
-  <label id="elevationLabel" class="displayInfo">0 feet gained</label>
-</div>
-<h2 id="calorieLabel">0 calories</h2>
-
 <br>
 
 
-<%= link_to 'New Trail', new_trail_path %>

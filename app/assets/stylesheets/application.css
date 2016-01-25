@@ -14,16 +14,87 @@
  *= require_self
  */
 
+body {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f1/Caraiman_Cross_on_Bucegi_mountain_top.jpg);
+  background-size: cover;
+  background-repeat: none;
+}
+
+hr {
+  margin: 20px;
+}
+
 .displayInfo {
-  font-size: 20px;
+  font-size: 14px;
   margin: 10px 10px;
 }
 
-input {
+.inputTable {
+  width: 80%;
+  margin: auto;
+  padding: 20px 0px;
+}
 
+.infoContainer {
+  color: white;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  background-color: black;
+  opacity: .8;
+  padding: 10px;
+}
+
+.aboutYouLabel {
+  font-size: 24px;
+  text-align: center;
+  padding: 10px 0px;
+  padding-top: 30px;
+}
+
+#calorieLabel {
+  font-size: 24px;
+  text-align: center;
+}
+
+.trailContainer {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+.trailText {
+  padding: 10px;
+  margin-left: 0px;
+}
+
+#trailPicker {
+  padding: 10px;
+  margin-left: 0px;
+}
+
+.calContainer {
+  background-color: #2eb82e;
+  height: 30px;
+  width: 30%;
+  margin: auto;
+  opacity: 1;
 }
 
 .nav {
-  height: 30px;
-  background-color: green;
+  height: 10px;
+  background-color: #2eb82e;
+}
+
+.title {
+  padding-top: 15px;
+  margin-left: 20px;
+}
+
+.navContainer {
+  margin-top: -20px;
+  margin-left: -10px;
+  margin-right: -8px;
+  background-color: #595959;
+  color: white;
 }
